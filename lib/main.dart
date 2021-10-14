@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tafsairs_app/pages/great_tafsir_page.dart';
+import 'features/quraan_feature/presentation/pages/great_tafsir_page.dart';
 
 void main() {
   runApp(GreatTafsirApp());

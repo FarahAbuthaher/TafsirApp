@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tafsairs_app/widgets/buttons.dart';
+import 'package:tafsairs_app/features/quraan_feature/presentation/widgets/buttons.dart';
 
 class GreatTafsirPage extends StatelessWidget {
   List<String> rahmanPages = [
@@ -9,6 +9,7 @@ class GreatTafsirPage extends StatelessWidget {
     'assets/images/surah/p532@2x.png',
     'assets/images/surah/p531@2x.png',
   ];
+  bool onClick = true;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class GreatTafsirPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Container(
-            width: width > 800 ? 800 : width,
+            width: width > 700 ? 700 : width,
             child: Stack(
               alignment: Alignment.center,
               children: [
@@ -27,31 +28,19 @@ class GreatTafsirPage extends StatelessWidget {
                   'assets/images/quranPage/QuranPageBackground.jpg',
                   fit: BoxFit.fill,
                 )),
-                Column(
-                  children: [
-                    Container(
-                        height: height * 0.085,
-                        color: Colors.white,
-                        child: Stack(
-                          children: [
-                            Image.asset(
-                              'assets/images/quranPage/AyahActionHeader.png',
-                              fit: BoxFit.cover,
-                              scale: 0.7,
-                            ),
-                            AllTafsirButtons(),
-                          ],
-                        )),
-                    Image.asset(
-                      'assets/images/quranPage/QuranFrameDesign.png',
-                    ),
-                  ],
+                Positioned(
+                  top: 60,
+                  bottom: 30,
+                  child: Image.asset(
+                    'assets/images/quranPage/QuranFrameDesign.png',
+                    scale: 0.8,
+                  ),
                 ),
                 Positioned(
-                  top: height > 500 ? 100 : height * 0.2,
+                  top: height > 800 ? 90 : height * 0.13,
                   child: Container(
-                    height: height > 1000 ? 900 : height * 0.71,
-                    width: width > 800 ? 500 : width * 0.82,
+                    height: height > 1000 ? 1000 : height * 0.74,
+                    width: width > 600 ? 400 : width * 0.8,
                     child: PageView.builder(
                       itemCount: rahmanPages.length,
                       itemBuilder: (BuildContext context, int index) {
@@ -63,19 +52,20 @@ class GreatTafsirPage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                    top: 66,
-                    right: width > 600 ? 95 : width * 0.17,
+                    top: 70,
+                    right: width > 600 ? 200 : width * 0.17,
                     child: Image.asset(
                       'assets/images/surah/Joza027.png',
                       scale: 4.5,
                     )),
                 Positioned(
-                    top: 66,
-                    left: width > 600 ? 97 : width * 0.17,
+                    top: 70,
+                    left: width > 600 ? 200 : width * 0.17,
                     child: Image.asset(
                       'assets/images/surah/Sora055.png',
                       scale: 4.5,
                     )),
+                AllTafsirButtons()
               ],
             ),
           ),
