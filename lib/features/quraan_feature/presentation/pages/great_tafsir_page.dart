@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tafsairs_app/features/quraan_feature/presentation/widgets/buttons.dart';
@@ -29,38 +28,42 @@ class GreatTafsirPage extends StatelessWidget {
                   fit: BoxFit.fill,
                 )),
                 Positioned(
-                  top: 60,
+                  top: 80,
                   bottom: 30,
-                  child: Image.asset(
-                    'assets/images/quranPage/QuranFrameDesign.png',
-                    scale: 0.8,
+                  child: Container(
+                    height: height > 500 ? 300 : height * 0.5,
+                    width: width > 760 ? 500 : width * 0.8,
+                    child: Image.asset(
+                      'assets/images/quranPage/QuranFrameDesign.png',
+                      scale: 0.8, fit: BoxFit.fill,
+                    ),
                   ),
                 ),
                 Positioned(
-                  top: height > 800 ? 90 : height * 0.13,
+                  top: height > 800 ? 80 : height * 0.2,
                   child: Container(
-                    height: height > 1000 ? 1000 : height * 0.74,
-                    width: width > 600 ? 400 : width * 0.8,
+                    height: height > 1000 ? 1000 : height * 0.7,
+                    width: width > 760 ? 400 : width * 0.68,
                     child: PageView.builder(
                       itemCount: rahmanPages.length,
                       itemBuilder: (BuildContext context, int index) {
                         return Container(
                             color: Colors.white,
-                            child: Image.asset(rahmanPages[index]));
+                            child: Image.asset(rahmanPages[index],fit: BoxFit.fill));
                       },
                     ),
                   ),
                 ),
                 Positioned(
-                    top: 70,
-                    right: width > 600 ? 200 : width * 0.17,
+                    top: 85,
+                    right: width > 760 ? 200 : width * 0.24,
                     child: Image.asset(
                       'assets/images/surah/Joza027.png',
                       scale: 4.5,
                     )),
                 Positioned(
-                    top: 70,
-                    left: width > 600 ? 200 : width * 0.17,
+                    top: 85,
+                    left: width > 760 ? 200 : width * 0.24,
                     child: Image.asset(
                       'assets/images/surah/Sora055.png',
                       scale: 4.5,
