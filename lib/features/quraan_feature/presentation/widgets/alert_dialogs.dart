@@ -184,3 +184,29 @@ listenDialog(BuildContext context) {
     },
   );
 }
+
+bookmarkDialog(BuildContext context) {
+  // set up the buttons
+  Widget cancelButton = InkWell(
+      child: Image.asset('assets/images/dialogIcons/delete.png'),
+      onTap: () => Navigator.pop(context)
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog( titlePadding: EdgeInsets.zero,
+    buttonPadding: EdgeInsets.zero,
+    title: Container(height: 30,color: Color.fromARGB(255,233,239,234),child: Text("العلامات",textAlign: TextAlign.center, style: TextStyle(color: Colors.black),)),
+    content: Text(''),
+    actions: [
+      Container( height: 35, color: Color.fromARGB(255,224,235,248),child: Align(alignment: Alignment.centerLeft,child: cancelButton)),
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}

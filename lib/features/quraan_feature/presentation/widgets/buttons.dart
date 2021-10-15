@@ -79,13 +79,14 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
                         iconAsset: 'assets/images/topIcons/ayaList.png'),
                     TafsirButton(
                         onPressed: () => showAlertDialog(context),
-                        iconAsset: 'assets/images/topIcons/list_icon.png'),
-                    TafsirButton(
-                        onPressed: () => showAlertDialog(context),
                         iconAsset: 'assets/images/topIcons/settings_icon.png'),
                     TafsirButton(
                         onPressed: () => showAlertDialog(context),
-                        iconAsset: 'assets/images/topIcons/bookmark_list_icon.png'),
+                        iconAsset: 'assets/images/topIcons/list_icon.png'),
+                    TafsirButton(
+                        onPressed: () => bookmarkDialog(context),
+                        iconAsset:
+                            'assets/images/topIcons/bookmark_list_icon.png'),
                     TafsirButton(
                         onPressed: () => _toggle(),
                         iconAsset: onClick
@@ -98,8 +99,11 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
             ],
           ),
         ),
-        if(onClick)
-          Image.asset('assets/images/quranPage/bookmark.png', scale: 2,)
+        if (onClick)
+          Image.asset(
+            'assets/images/quranPage/bookmark.png',
+            scale: 2,
+          )
       ],
     );
   }
@@ -135,4 +139,3 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
     );
   }
 }
-

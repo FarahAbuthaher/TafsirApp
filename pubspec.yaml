@@ -44,6 +44,7 @@ flutter:
     - assets/images/quranPage/
     - assets/images/surah/
     - assets/images/splashScreen/
+    - assets/images/dialogIcons/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
