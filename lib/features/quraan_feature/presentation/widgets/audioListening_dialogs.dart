@@ -87,8 +87,8 @@ class _PlayAllSelectedState extends State<PlayAllSelected> {
         style: TextStyle(color: Colors.black),
         textAlign: TextAlign.center,
       ),
-      content:
-        SingleChildScrollView(
+      content:  Scaffold(
+        body: SingleChildScrollView(
               child: Column(children: [
                 Text('الرجاء اختيار المادة المراد الاستماع لتلاوتها',
                     textAlign: TextAlign.right),
@@ -102,13 +102,14 @@ class _PlayAllSelectedState extends State<PlayAllSelected> {
                           textAlign: TextAlign.right,
                           style: TextStyle(fontSize: 20, color: Colors.black),
                         ),
+                        toggleable: true,
                         activeColor: Colors.blue,
                         value: listeningItem,
                         groupValue: listeningChoice,
                         onChanged: (String? value) {
-                          setState(() =>
-                            listeningChoice = value
-                          );
+                          setState(() {
+                            listeningChoice = value;
+                          });
                           print(listeningChoice);
                         },
                       ),
@@ -144,6 +145,7 @@ class _PlayAllSelectedState extends State<PlayAllSelected> {
                 )
               ]),
             ),
+      ),
       actions: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
