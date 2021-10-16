@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-
 import 'alert_dialogs.dart';
 
 class TafsirButton extends StatelessWidget {
@@ -70,22 +69,22 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TafsirButton(
-                        onPressed: () => playAlert(context),
+                        onPressed: () => customDialog(context, PlayAudio()),
                         iconAsset: 'assets/images/topIcons/playEnd1x.png'),
                     TafsirButton(
-                        onPressed: () => listenDialog(context),
+                        onPressed: () => customDialog(context, PlayAllSelected()),
                         iconAsset: 'assets/images/topIcons/play_all_icon.png'),
                     TafsirButton(
-                        onPressed: () => searchListDialog(context),
+                        onPressed: () => customDialog(context, UserCreayedListsDialog()),
                         iconAsset: 'assets/images/topIcons/ayaList.png'),
                     TafsirButton(
                         onPressed: () => showAlertDialog(context),
                         iconAsset: 'assets/images/topIcons/settings_icon.png'),
                     TafsirButton(
-                        onPressed: () => ayatListDialog(context),
+                        onPressed: () => customDialog(context, AyatListDialog()),
                         iconAsset: 'assets/images/topIcons/list_icon.png'),
                     TafsirButton(
-                        onPressed: () => bookmarkDialog(context),
+                        onPressed: () => customDialog(context, BookMarkListDialog()),
                         iconAsset:
                             'assets/images/topIcons/bookmark_list_icon.png'),
                     TafsirButton(
@@ -94,7 +93,7 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
                             ? 'assets/images/topIcons/addBookMark_icon.png'
                             : 'assets/images/topIcons/removeBookmark_icon.png'),
                     TafsirButton(
-                        onPressed: () => searchDialog(context),
+                        onPressed: () => customDialog(context, SearchAlertDialog()),
                         iconAsset: 'assets/images/topIcons/search_icon.png'),
                   ]),
             ],
@@ -109,36 +108,45 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
     );
   }
 
-  showAlertDialog(BuildContext context) {
-    // set up the buttons
-    Widget cancelButton = TextButton(
-      child: Text("Cancel"),
-      onPressed: () {},
-    );
-    Widget continueButton = TextButton(
-      child: Text("Continue"),
-      onPressed: () {},
-    );
-
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text("AlertDialog"),
-      content: Text(
-          "Would you like to continue learning how to use Flutter alerts?"),
-      actions: [
-        cancelButton,
-        continueButton,
-      ],
-    );
-
+  customDialog(BuildContext context, Widget dialogCustom) {
     // show the dialog
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return alert;
+        return dialogCustom;
       },
     );
   }
 }
 
+showAlertDialog(BuildContext context) {
+  // set up the buttons
+  Widget cancelButton = TextButton(
+    child: Text("Cancel"),
+    onPressed: () {},
+  );
+  Widget continueButton = TextButton(
+    child: Text("Continue"),
+    onPressed: () {},
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("AlertDialog"),
+    content: Text(
+        "Would you like to continue learning how to use Flutter alerts?"),
+    actions: [
+      cancelButton,
+      continueButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
 
