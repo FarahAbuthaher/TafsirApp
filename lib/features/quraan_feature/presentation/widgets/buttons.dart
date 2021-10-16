@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 import 'alert_dialogs.dart';
 
@@ -75,13 +76,13 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
                         onPressed: () => listenDialog(context),
                         iconAsset: 'assets/images/topIcons/play_all_icon.png'),
                     TafsirButton(
-                        onPressed: () => showAlertDialog(context),
+                        onPressed: () => searchListDialog(context),
                         iconAsset: 'assets/images/topIcons/ayaList.png'),
                     TafsirButton(
                         onPressed: () => showAlertDialog(context),
                         iconAsset: 'assets/images/topIcons/settings_icon.png'),
                     TafsirButton(
-                        onPressed: () => showAlertDialog(context),
+                        onPressed: () => ayatListDialog(context),
                         iconAsset: 'assets/images/topIcons/list_icon.png'),
                     TafsirButton(
                         onPressed: () => bookmarkDialog(context),
@@ -139,3 +140,5 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
     );
   }
 }
+
+
