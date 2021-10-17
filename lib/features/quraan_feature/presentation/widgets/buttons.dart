@@ -41,7 +41,7 @@ class AllTafsirButtons extends StatefulWidget {
 }
 
 class _AllTafsirButtonsState extends State<AllTafsirButtons> {
-  bool onClick = true;
+  bool onClick = false;
 
   void _toggle() {
     setState(() => onClick = !onClick);
@@ -50,6 +50,7 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -96,10 +97,11 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
                         onPressed: () => customDialog(context, SearchAlertDialog()),
                         iconAsset: 'assets/images/topIcons/search_icon.png'),
                   ]),
+
             ],
           ),
         ),
-        if (onClick)
+        if (!onClick)
           Image.asset(
             'assets/images/quranPage/bookmark.png',
             scale: 2,
@@ -119,34 +121,4 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
   }
 }
 
-showAlertDialog(BuildContext context) {
-  // set up the buttons
-  Widget cancelButton = TextButton(
-    child: Text("Cancel"),
-    onPressed: () {},
-  );
-  Widget continueButton = TextButton(
-    child: Text("Continue"),
-    onPressed: () {},
-  );
-
-  // set up the AlertDialog
-  AlertDialog alert = AlertDialog(
-    title: Text("AlertDialog"),
-    content: Text(
-        "Would you like to continue learning how to use Flutter alerts?"),
-    actions: [
-      cancelButton,
-      continueButton,
-    ],
-  );
-
-  // show the dialog
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    },
-  );
-}
 

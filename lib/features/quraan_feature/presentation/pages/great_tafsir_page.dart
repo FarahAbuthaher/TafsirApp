@@ -32,7 +32,7 @@ class GreatTafsirPage extends StatelessWidget {
                   bottom: 30,
                   child: Container(
                     height: height > 500 ? 300 : height * 0.5,
-                    width: width > 760 ? 500 : width * 0.8,
+                    width: width > 760 ? 500 : width * 0.97,
                     child: Image.asset(
                       'assets/images/quranPage/QuranFrameDesign.png',
                       scale: 0.8,
@@ -41,10 +41,10 @@ class GreatTafsirPage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: height > 800 ? 80 : height * 0.18,
+                  top: height > 800 ? 80 : height * 0.17,
                   child: Container(
                     height: height > 800 ? 800 : height * 0.72,
-                    width: width > 760 ? 400 : width * 0.68,
+                    width: width > 760 ? 400 : width * 0.8,
                     child: PageView.builder(
                       reverse: true,
                       itemCount: rahmanPages.length,
@@ -59,14 +59,14 @@ class GreatTafsirPage extends StatelessWidget {
                 ),
                 Positioned(
                     top: 85,
-                    right: width > 760 ? 200 : width * 0.24,
+                    right: width > 760 ? 200 : width * 0.17,
                     child: Image.asset(
                       'assets/images/surah/Joza027.png',
                       scale: 4.5,
                     )),
                 Positioned(
                     top: 85,
-                    left: width > 760 ? 200 : width * 0.24,
+                    left: width > 760 ? 200 : width * 0.17,
                     child: Image.asset(
                       'assets/images/surah/Sora055.png',
                       scale: 4.5,

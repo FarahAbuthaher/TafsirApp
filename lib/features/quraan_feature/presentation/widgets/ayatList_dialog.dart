@@ -83,29 +83,27 @@ class AyatBarView extends StatelessWidget {
           borderRadius: BorderRadius.circular(3)),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Flexible(
-          child: TextField(
-            autofocus: true,
-            textDirection: TextDirection.rtl,
-            style: TextStyle(fontSize: 22.0, color: Colors.black),
-            decoration: InputDecoration(
-              suffixIcon: Icon(
-                Icons.search,
-                color: Colors.grey,
-              ),
-              fillColor: Colors.white,
-              hintTextDirection: TextDirection.rtl,
-              filled: true,
-              hintText: hintText,
-              contentPadding:
-              const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 3),
-              ),
-              enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey),
-                borderRadius: BorderRadius.circular(3),
-              ),
+        child: TextField(
+          autofocus: true,
+          textDirection: TextDirection.rtl,
+          style: TextStyle(fontSize: 22.0, color: Colors.black),
+          decoration: InputDecoration(
+            suffixIcon: Icon(
+              Icons.search,
+              color: Colors.grey,
+            ),
+            fillColor: Colors.white,
+            hintTextDirection: TextDirection.rtl,
+            filled: true,
+            hintText: hintText,
+            contentPadding:
+            const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey, width: 3),
+            ),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey),
+              borderRadius: BorderRadius.circular(3),
             ),
           ),
         ),

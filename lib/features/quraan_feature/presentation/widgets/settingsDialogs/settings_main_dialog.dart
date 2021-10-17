@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'allSettingsDialogs.dart';
 
 class SettingsDialog extends StatefulWidget {
   @override
@@ -17,6 +18,17 @@ class _SettingsDialogState extends State<SettingsDialog> {
   ];
 
   bool notifBool = false;
+  List<Widget> settingListDialog = [ReaderChoiceDialog(),AlertDialog(), AlertDialog(), AlertDialog(),AlertDialog(), AlertDialog()];
+
+  customSettingsDialog(BuildContext context, Widget dialogCustom) {
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return dialogCustom;
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +52,7 @@ class _SettingsDialogState extends State<SettingsDialog> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   SettingsTileButton(
-                    onPressed: null,
+                    onPressed: () => customSettingsDialog(context, settingListDialog[settingsList.indexOf(settingsItem)]),
                     text: settingsItem,
                   ),
                   Divider(
@@ -111,6 +123,7 @@ class SettingsTileButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onPressed,
       leading: Icon(
         Icons.arrow_back_ios,
         color: Colors.grey[300],
