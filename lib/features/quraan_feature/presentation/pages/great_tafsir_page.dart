@@ -40,9 +40,9 @@ class GreatTafsirPage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: height > 800 ? 80 : height * 0.2,
+                  top: height > 800 ? 80 : height * 0.18,
                   child: Container(
-                    height: height > 1000 ? 1000 : height * 0.7,
+                    height: height > 800 ? 800 : height * 0.72,
                     width: width > 760 ? 400 : width * 0.68,
                     child: PageView.builder(
                       itemCount: rahmanPages.length,

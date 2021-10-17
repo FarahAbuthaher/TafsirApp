@@ -1,23 +1,38 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SearchAlertDialog extends StatelessWidget {
-  const SearchAlertDialog({Key? key}) : super(key: key);
+class SearchAlertDialog extends StatefulWidget {
+  @override
+  _SearchAlertDialogState createState() => _SearchAlertDialogState();
+}
+
+class _SearchAlertDialogState extends State<SearchAlertDialog> {
+  bool ayaState = false;
+  bool rootState = false;
+  bool wordState = true;
+  bool wordRootState = false;
+
+  void allFalse() {
+    setState((){
+    ayaState = false;
+    rootState = false;
+    wordState = false;
+    wordRootState = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-
-    Widget cancelButton = TextButton(
-      child: Text("Cancel"),
+    Widget addButton = IconButton(
+      icon: Icon(Icons.playlist_add_rounded, color: Colors.blue,),
       onPressed: () {},
     );
-    Widget continueButton = TextButton(
-      child: Text("Continue"),
+    Widget checkButton = IconButton(
+      icon: Icon(Icons.check, color: Colors.blue,),
       onPressed: () {},
     );
-
     return AlertDialog(
+      scrollable: true,
       titlePadding: EdgeInsets.zero,
       contentPadding: EdgeInsets.zero,
       buttonPadding: EdgeInsets.zero,
@@ -32,33 +47,63 @@ class SearchAlertDialog extends StatelessWidget {
       content: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 8.0, left: 8,right: 8),
-            child: Flexible(
-              child: TextField(
-                autofocus: true,
-                textDirection: TextDirection.rtl,
-                style: TextStyle(fontSize: 18, color: Colors.black),
-                decoration: InputDecoration(
-                  fillColor: Colors.white,
-                  hintTextDirection: TextDirection.rtl,
-                  filled: true,
-                  hintText: 'ابحث في القراّن.. على الأقل ثلاثةأحرف',
-                  contentPadding:
-                  const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0, right: 8),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 3),
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(3),
-                  ),
+            padding: EdgeInsets.only(bottom: 8.0, left: 8, right: 8),
+            child: TextField(
+              autofocus: true,
+              textDirection: TextDirection.rtl,
+              style: TextStyle(fontSize: 18, color: Colors.black),
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                hintTextDirection: TextDirection.rtl,
+                filled: true,
+                hintText: 'ابحث في القراّن.. على الأقل ثلاثةأحرف',
+                contentPadding: const EdgeInsets.only(
+                    left: 14.0, bottom: 8.0, top: 8.0, right: 8),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 3),
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(3),
                 ),
               ),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SearchButton(
+                  onPressed: () => setState(() {allFalse();
+                  ayaState = true;
+                  }),
+                  icon: ayaState?'assets/images/dialogIcons/Ayah_selected.png' :'assets/images/dialogIcons/Ayah.png',
+                ),
+                SearchButton(
+                  onPressed: () => setState(() {allFalse();
+                  wordRootState = true;
+                  }),
+                  icon:wordRootState? 'assets/images/dialogIcons/word_root_selected.png':'assets/images/dialogIcons/word_root.png',
+                ),
+                SearchButton(
+                  onPressed: () => setState(() {allFalse();
+                  rootState = true;
+                  }),
+                  icon:rootState?'assets/images/dialogIcons/root_selected.png': 'assets/images/dialogIcons/root.png',
+                ),
+                SearchButton(
+                  onPressed: () => setState(() {allFalse();
+                  wordState = true;
+                  }),
+                  icon:wordState?'assets/images/dialogIcons/word_selected.png': 'assets/images/dialogIcons/word.png',
+                ),
+              ],
+            ),
+          ),
           // Row of buttons
-          if(true)
-          // tab bar
+          if (true)
+            // tab bar
             Container(
               height: 30,
               width: double.infinity,
@@ -68,16 +113,45 @@ class SearchAlertDialog extends StatelessWidget {
                 textAlign: TextAlign.right,
                 style: TextStyle(color: Colors.black),
               ),
-            )
+            ),
+          SizedBox(height: 50,),
         ],
       ),
       actions: [
         Column(
-          children: [Divider(color: Colors.black,), Row( children: [cancelButton,
-            continueButton,],)],
+          children: [
+            Divider(
+              color: Colors.black,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                addButton,
+                checkButton
+              ],
+            )
+          ],
         ),
-
       ],
+    );
+  }
+}
+
+class SearchButton extends StatelessWidget {
+  final VoidCallback? onPressed;
+  String icon;
+
+  SearchButton(
+      {required this.onPressed,
+      required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPressed,
+      child: Image.asset(icon,
+        scale: 1.9,
+      ),
     );
   }
 }
