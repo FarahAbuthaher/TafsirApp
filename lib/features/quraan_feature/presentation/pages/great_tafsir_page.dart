@@ -43,7 +43,7 @@ class GreatTafsirPage extends StatelessWidget {
                 Positioned(
                   top: height > 800 ? 80 : height * 0.17,
                   child: Container(
-                    height: height > 800 ? 800 : height * 0.7,
+                    height: height > 800 ? 800 : height * 0.72,
                     width: width > 760 ? 400 : width * 0.8,
                     child: PageView.builder(
                       reverse: true,
