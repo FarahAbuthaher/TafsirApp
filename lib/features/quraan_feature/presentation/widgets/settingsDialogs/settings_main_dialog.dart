@@ -40,8 +40,8 @@ bool notifBool = false;
             }).toList(),
             CheckboxListTile(
               title: Text(
-                'تفعيل الاإشعارات',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                'تفعيل الإشعارات',
+                style: TextStyle(fontSize: 15),
                 textAlign: TextAlign.right,
               ),
               checkColor: Colors.white,
@@ -53,11 +53,11 @@ bool notifBool = false;
               },
             ),
             Divider(color: Colors.grey[200],),
-            TextButton(onPressed: null, child: Text('المساعدة', textAlign: TextAlign.right, style: TextStyle(color: Colors.black),)),
+            Align(alignment: Alignment.topRight,child: TextButton(onPressed: null, child: Text('المساعدة',style: TextStyle(color: Colors.black),))),
             Divider(color: Colors.grey[200],),
             SettingsTileButton(onPressed: null, text: 'نبذة عنا',),
             Divider(color: Colors.grey[200],),
-            TextButton(onPressed: null, child: Text('انشر تؤجر', textAlign: TextAlign.right, style: TextStyle(color: Colors.black),)),
+            Align(alignment: Alignment.topRight,child: TextButton(onPressed: null, child: Text('انشر تؤجر', style: TextStyle(color: Colors.black),))),
             Divider(color: Colors.grey[200],)
           ],
         ),
@@ -74,15 +74,10 @@ SettingsTileButton({required this.text, required this.onPressed});
 
 @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Icon(Icons.arrow_back_ios, color: Colors.grey[200],),
-          Text(text, textAlign: TextAlign.right, style: TextStyle(color: Colors.black),)
-        ],
-      ));
+    return ListTile(
+      leading: Icon(Icons.arrow_back_ios, color: Colors.grey[300],),
+      trailing: Text(text, textAlign: TextAlign.right, style: TextStyle(color: Colors.black, fontSize: 15),),
+    );
   }
 }
 
