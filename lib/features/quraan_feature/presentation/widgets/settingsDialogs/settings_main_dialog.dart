@@ -18,7 +18,14 @@ class _SettingsDialogState extends State<SettingsDialog> {
   ];
 
   bool notifBool = false;
-  List<Widget> settingListDialog = [ReaderChoiceDialog(),AlertDialog(), AlertDialog(), AlertDialog(),AlertDialog(), AlertDialog()];
+  List<Widget> settingListDialog = [
+    ReaderChoiceDialog(),
+    SuwarListDialog(),
+    AyatListDialog(),
+    TafsirChoiceDialog(),
+    TranslationSettingsDialog(),
+    ScreenPauseTimeDialog()
+  ];
 
   customSettingsDialog(BuildContext context, Widget dialogCustom) {
     // show the dialog
@@ -52,7 +59,8 @@ class _SettingsDialogState extends State<SettingsDialog> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   SettingsTileButton(
-                    onPressed: () => customSettingsDialog(context, settingListDialog[settingsList.indexOf(settingsItem)]),
+                    onPressed: () => customSettingsDialog(context,
+                        settingListDialog[settingsList.indexOf(settingsItem)]),
                     text: settingsItem,
                   ),
                   Divider(
@@ -90,7 +98,7 @@ class _SettingsDialogState extends State<SettingsDialog> {
               color: Colors.grey[200],
             ),
             SettingsTileButton(
-              onPressed: null,
+              onPressed: ()=> customSettingsDialog(context, AboutUsDialog()),
               text: 'نبذة عنا',
             ),
             Divider(
@@ -99,7 +107,7 @@ class _SettingsDialogState extends State<SettingsDialog> {
             Align(
                 alignment: Alignment.topRight,
                 child: TextButton(
-                    onPressed: null,
+                    onPressed: () => customSettingsDialog(context, SharingDialog()),
                     child: Text(
                       'انشر تؤجر',
                       style: TextStyle(color: Colors.black),
