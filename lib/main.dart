@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'features/quraan_feature/presentation/pages/great_tafsir_page.dart';
 import 'splash_screen.dart';
 
 void main() {

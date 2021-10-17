@@ -11,6 +11,8 @@ class _SearchAlertDialogState extends State<SearchAlertDialog> {
   bool rootState = false;
   bool wordState = true;
   bool wordRootState = false;
+  String twoLetters = 'حرفين';
+  String threeLetters = 'ثلاثة احرف';
 
   void allFalse() {
     setState((){
@@ -56,7 +58,7 @@ class _SearchAlertDialogState extends State<SearchAlertDialog> {
                 fillColor: Colors.white,
                 hintTextDirection: TextDirection.rtl,
                 filled: true,
-                hintText: 'ابحث في القراّن.. على الأقل ثلاثةأحرف',
+                hintText: 'ابحث في القراّن.. على الأقل ${(rootState || wordRootState)? twoLetters: threeLetters}',
                 contentPadding: const EdgeInsets.only(
                     left: 14.0, bottom: 8.0, top: 8.0, right: 8),
                 focusedBorder: OutlineInputBorder(
