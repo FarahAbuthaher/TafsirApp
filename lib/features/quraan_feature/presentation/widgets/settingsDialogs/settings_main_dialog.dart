@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,9 +7,16 @@ class SettingsDialog extends StatefulWidget {
 }
 
 class _SettingsDialogState extends State<SettingsDialog> {
-List<String> settingsList = ['اختيار القارئ','تنزيل السور','تنزيل السور التي تحتوي الاّيات','اختيار التفسير','اعدادات التراجم','زمن توقف الشاشة'];
+  List<String> settingsList = [
+    'اختيار القارئ',
+    'تنزيل السور',
+    'تنزيل السور التي تحتوي الاّيات',
+    'اختيار التفسير',
+    'اعدادات التراجم',
+    'زمن توقف الشاشة'
+  ];
 
-bool notifBool = false;
+  bool notifBool = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +39,13 @@ bool notifBool = false;
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  SettingsTileButton(onPressed: null, text: settingsItem,),
-                  Divider(color: Colors.grey[200],)
+                  SettingsTileButton(
+                    onPressed: null,
+                    text: settingsItem,
+                  ),
+                  Divider(
+                    color: Colors.grey[200],
+                  )
                 ],
               );
             }).toList(),
@@ -52,32 +63,63 @@ bool notifBool = false;
                 });
               },
             ),
-            Divider(color: Colors.grey[200],),
-            Align(alignment: Alignment.topRight,child: TextButton(onPressed: null, child: Text('المساعدة',style: TextStyle(color: Colors.black),))),
-            Divider(color: Colors.grey[200],),
-            SettingsTileButton(onPressed: null, text: 'نبذة عنا',),
-            Divider(color: Colors.grey[200],),
-            Align(alignment: Alignment.topRight,child: TextButton(onPressed: null, child: Text('انشر تؤجر', style: TextStyle(color: Colors.black),))),
-            Divider(color: Colors.grey[200],)
+            Divider(
+              color: Colors.grey[200],
+            ),
+            Align(
+                alignment: Alignment.topRight,
+                child: TextButton(
+                    onPressed: null,
+                    child: Text(
+                      'المساعدة',
+                      style: TextStyle(color: Colors.black),
+                    ))),
+            Divider(
+              color: Colors.grey[200],
+            ),
+            SettingsTileButton(
+              onPressed: null,
+              text: 'نبذة عنا',
+            ),
+            Divider(
+              color: Colors.grey[200],
+            ),
+            Align(
+                alignment: Alignment.topRight,
+                child: TextButton(
+                    onPressed: null,
+                    child: Text(
+                      'انشر تؤجر',
+                      style: TextStyle(color: Colors.black),
+                    ))),
+            Divider(
+              color: Colors.grey[200],
+            )
           ],
         ),
       ),
-
     );
   }
 }
 
 class SettingsTileButton extends StatelessWidget {
-String text;
-final VoidCallback? onPressed;
-SettingsTileButton({required this.text, required this.onPressed});
+  String text;
+  final VoidCallback? onPressed;
 
-@override
+  SettingsTileButton({required this.text, required this.onPressed});
+
+  @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(Icons.arrow_back_ios, color: Colors.grey[300],),
-      trailing: Text(text, textAlign: TextAlign.right, style: TextStyle(color: Colors.black, fontSize: 15),),
+      leading: Icon(
+        Icons.arrow_back_ios,
+        color: Colors.grey[300],
+      ),
+      trailing: Text(
+        text,
+        textAlign: TextAlign.right,
+        style: TextStyle(color: Colors.black, fontSize: 15),
+      ),
     );
   }
 }
-

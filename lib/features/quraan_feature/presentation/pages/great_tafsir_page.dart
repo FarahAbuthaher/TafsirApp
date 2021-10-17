@@ -4,9 +4,9 @@ import 'package:tafsairs_app/features/quraan_feature/presentation/widgets/button
 
 class GreatTafsirPage extends StatelessWidget {
   List<String> rahmanPages = [
-    'assets/images/surah/p533@2x.png',
-    'assets/images/surah/p532@2x.png',
     'assets/images/surah/p531@2x.png',
+    'assets/images/surah/p532@2x.png',
+    'assets/images/surah/p533@2x.png',
   ];
   bool onClick = true;
 
@@ -35,7 +35,8 @@ class GreatTafsirPage extends StatelessWidget {
                     width: width > 760 ? 500 : width * 0.8,
                     child: Image.asset(
                       'assets/images/quranPage/QuranFrameDesign.png',
-                      scale: 0.8, fit: BoxFit.fill,
+                      scale: 0.8,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),
@@ -45,11 +46,13 @@ class GreatTafsirPage extends StatelessWidget {
                     height: height > 800 ? 800 : height * 0.72,
                     width: width > 760 ? 400 : width * 0.68,
                     child: PageView.builder(
+                      reverse: true,
                       itemCount: rahmanPages.length,
                       itemBuilder: (BuildContext context, int index) {
                         return Container(
                             color: Colors.white,
-                            child: Image.asset(rahmanPages[index],fit: BoxFit.fill));
+                            child: Image.asset(rahmanPages[index],
+                                fit: BoxFit.fill));
                       },
                     ),
                   ),
