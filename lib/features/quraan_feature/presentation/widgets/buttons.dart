@@ -78,7 +78,7 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
                         onPressed: () => customDialog(context, UserCreayedListsDialog()),
                         iconAsset: 'assets/images/topIcons/ayaList.png'),
                     TafsirButton(
-                        onPressed: () => showAlertDialog(context),
+                        onPressed: () => customDialog(context, SettingsDialog()),
                         iconAsset: 'assets/images/topIcons/settings_icon.png'),
                     TafsirButton(
                         onPressed: () => customDialog(context, AyatListDialog()),
