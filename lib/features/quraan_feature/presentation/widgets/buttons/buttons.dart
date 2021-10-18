@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'alert_dialogs.dart';
+import '../dialogs/alert_dialogs.dart';
 
 class TafsirButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -35,8 +35,6 @@ class TafsirButton extends StatelessWidget {
 }
 
 class AllTafsirButtons extends StatefulWidget {
-  // List<String> iconsImages =['assets/images/topIcons/addBookMark_icon.png','assets/images/topIcons/addBookMark_icon.png','assets/images/topIcons/addBookMark_icon.png',];
-  @override
   _AllTafsirButtonsState createState() => _AllTafsirButtonsState();
 }
 
@@ -73,19 +71,24 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
                         onPressed: () => customDialog(context, PlayAudio()),
                         iconAsset: 'assets/images/topIcons/playEnd1x.png'),
                     TafsirButton(
-                        onPressed: () => customDialog(context, PlayAllSelected()),
+                        onPressed: () =>
+                            customDialog(context, PlayAllSelected()),
                         iconAsset: 'assets/images/topIcons/play_all_icon.png'),
                     TafsirButton(
-                        onPressed: () => customDialog(context, UserCreayedListsDialog()),
+                        onPressed: () =>
+                            customDialog(context, UserCreayedListsDialog()),
                         iconAsset: 'assets/images/topIcons/ayaList.png'),
                     TafsirButton(
-                        onPressed: () => customDialog(context, SettingsDialog()),
+                        onPressed: () =>
+                            customDialog(context, SettingsDialog()),
                         iconAsset: 'assets/images/topIcons/settings_icon.png'),
                     TafsirButton(
-                        onPressed: () => customDialog(context, AyatListDialog()),
+                        onPressed: () =>
+                            customDialog(context, AyatListDialog()),
                         iconAsset: 'assets/images/topIcons/list_icon.png'),
                     TafsirButton(
-                        onPressed: () => customDialog(context, BookMarkListDialog()),
+                        onPressed: () =>
+                            customDialog(context, BookMarkListDialog()),
                         iconAsset:
                             'assets/images/topIcons/bookmark_list_icon.png'),
                     TafsirButton(
@@ -94,10 +97,10 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
                             ? 'assets/images/topIcons/addBookMark_icon.png'
                             : 'assets/images/topIcons/removeBookmark_icon.png'),
                     TafsirButton(
-                        onPressed: () => customDialog(context, SearchAlertDialog()),
+                        onPressed: () =>
+                            customDialog(context, SearchAlertDialog()),
                         iconAsset: 'assets/images/topIcons/search_icon.png'),
                   ]),
-
             ],
           ),
         ),
@@ -120,5 +123,3 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
     );
   }
 }
-
-

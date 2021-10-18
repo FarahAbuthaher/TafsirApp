@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tafsairs_app/features/quraan_feature/presentation/widgets/buttons.dart';
+import 'package:tafsairs_app/features/quraan_feature/presentation/widgets/buttons/buttons.dart';
 
 class GreatTafsirPage extends StatelessWidget {
   List<String> rahmanPages = [
