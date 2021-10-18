@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tafsairs_app/features/quraan_feature/presentation/widgets/dialogs/settingsDialogs/InnerSettingsDialog/reader_choice.dart';
 
 class PlayAudio extends StatelessWidget {
 // No audio play available widget
@@ -15,7 +16,11 @@ class PlayAudio extends StatelessWidget {
         "نعم",
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
       ),
-      onPressed: () => Navigator.pop(context),
+      onPressed: () => showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return ReaderChoiceDialog();
+          },)
     );
     return AlertDialog(
 
