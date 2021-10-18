@@ -41,7 +41,7 @@ class AllTafsirButtons extends StatefulWidget {
 }
 
 class _AllTafsirButtonsState extends State<AllTafsirButtons> {
-  bool onClick = false;
+  bool onClick = true;
 
   void _toggle() {
     setState(() => onClick = !onClick);
