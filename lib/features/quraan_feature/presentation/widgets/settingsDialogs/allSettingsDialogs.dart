@@ -1,4 +1,4 @@
-export 'readerChoice.dart';
+export 'reader_choice.dart';
 export 'suwarList.dart';
 export 'ayat_download_list.dart';
 export 'tafsir_choice.dart';

@@ -23,7 +23,7 @@ class SharingDialog extends StatelessWidget {
                 children: [
                   Image.asset('assets/images/socialMedia/godImage.jpg'),
                   Text(
-                      ' اذا اعجبك تطبيق التفاسير العظيمة , فنرجو ان تساهم في دعم هذا الوقف الخيري من خلال نشره عبر وسائل التواصل الاجتماعي , انشر ولك الاجر ان شاء الله '),
+                      ' اذا اعجبك تطبيق التفاسير العظيمة , فنرجو ان تساهم في دعم هذا الوقف الخيري من خلال نشره عبر وسائل التواصل الاجتماعي , انشر ولك الاجر ان شاء الله ', textAlign: TextAlign.right,),
                   SizedBox(
                     height: 10,
                   ),
