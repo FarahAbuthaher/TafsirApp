@@ -86,7 +86,7 @@ ListCreate(this.title);
             SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [TextButton(onPressed: null, child: Text('الغاء',style: TextStyle(fontSize: 15, color: Colors.blue),)),
+              children: [TextButton(onPressed: () => Navigator.pop(context), child: Text('الغاء',style: TextStyle(fontSize: 15, color: Colors.blue),)),
                 TextButton(onPressed: null, child: Text('حفظ',style: TextStyle(fontSize: 15, color: Colors.blue),)),
 
               ],

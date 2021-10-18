@@ -28,7 +28,7 @@ class SharingDialog extends StatelessWidget {
                     height: 10,
                   ),
                   SocialLogo(
-                      image: 'assets/images/socialMedia/Logo_facebook.png',
+                      image: 'assets/images/socialMedia/logo_facebook.png',
                       name: 'انشر على Facebook',
                       color: Colors.blue[900]),
                   SizedBox(
@@ -85,7 +85,7 @@ class SocialLogo extends StatelessWidget {
               children: [
                 Container(height: 25, child: Image.asset(image)),
                 Text(name,
-                    textAlign: TextAlign.start,
+                    textAlign: TextAlign.right,
                     style: TextStyle(color: Colors.white)),
               ],
             )),
