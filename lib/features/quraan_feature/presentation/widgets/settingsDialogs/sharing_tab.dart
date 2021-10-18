@@ -12,7 +12,7 @@ class SharingDialog extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         )),
         body: Container(
-            height: 300,
+            height: 400,
             width: 300,
             child: SingleChildScrollView(
                 child: Column(
@@ -20,7 +20,9 @@ class SharingDialog extends StatelessWidget {
                     Image.asset('assets/images/socialMedia/godImage.jpg'),
                     Text(
                         ' اذا اعجبك تطبيق التفاسير العظيمة , فنرجو ان تساهم في دعم هذا الوقف الخيري من خلال نشره عبر وسائل التواصل الاجتماعي , انشر ولك الاجر ان شاء الله '),
-                    SocialLogo(image: 'assets/images/socialMedia/Logo_facebook.png', name: 'انشر على Facebook', color: Colors.blue[900]),
+                    SizedBox(
+                      height: 10,
+                    ),SocialLogo(image: 'assets/images/socialMedia/Logo_facebook.png', name: 'انشر على Facebook', color: Colors.blue[900]),
                     SizedBox(
                       height: 4,
                     ),
@@ -56,7 +58,7 @@ SocialLogo({required this.image, required this.name, required this.color});
     return Column(
       children: [
         Container(
-            height: 30,
+            height: 40,
             width: 200,
             color: color,
             child: Row(
