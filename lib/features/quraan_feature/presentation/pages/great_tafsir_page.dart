@@ -2,13 +2,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tafsairs_app/features/quraan_feature/presentation/widgets/buttons/buttons.dart';
 
-class GreatTafsirPage extends StatelessWidget {
+class GreatTafsirPage extends StatefulWidget {
+  @override
+  _GreatTafsirPageState createState() => _GreatTafsirPageState();
+}
+
+class _GreatTafsirPageState extends State<GreatTafsirPage> {
   List<String> rahmanPages = [
     'assets/images/surah/p531@2x.png',
     'assets/images/surah/p532@2x.png',
     'assets/images/surah/p533@2x.png',
   ];
+
   bool onClick = true;
+
+  bool zoom = false;
+
+  _toggle() {
+    setState(()=> zoom=!zoom);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +31,30 @@ class GreatTafsirPage extends StatelessWidget {
         child: Center(
           child: Container(
             width: width > 700 ? 700 : width,
-            child: Stack(
+            child: /*zoom? InkWell(
+              onDoubleTap: _toggle,
+              child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Positioned.fill(
+                      child: Container(
+                        height: height > 800 ? 700 : height * 0.72,
+                        width: width > 760 ? 400 : width * 0.8,
+                        child: PageView.builder(
+                          reverse: true,
+                          itemCount: rahmanPages.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                                color: Colors.white,
+                                child: Image.asset(rahmanPages[index],
+                                    fit: BoxFit.fill));
+                          },
+                        ),
+                      ),
+                    ),]
+              ),
+            ):*/
+            Stack(
               alignment: Alignment.center,
               children: [
                 Positioned.fill(
@@ -40,23 +75,7 @@ class GreatTafsirPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
-                  top: height > 800 ? 90 : height * 0.17,
-                  child: Container(
-                    height: height > 800 ? 700 : height * 0.72,
-                    width: width > 760 ? 400 : width * 0.8,
-                    child: PageView.builder(
-                      reverse: true,
-                      itemCount: rahmanPages.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                            color: Colors.white,
-                            child: Image.asset(rahmanPages[index],
-                                fit: BoxFit.fill));
-                      },
-                    ),
-                  ),
-                ),
+
                 Positioned(
                     top: 85,
                     right: width > 760 ? 200 : width * 0.17,
@@ -71,7 +90,27 @@ class GreatTafsirPage extends StatelessWidget {
                       'assets/images/surah/Sora055.png',
                       scale: 4.5,
                     )),
-                AllTafsirButtons()
+                AllTafsirButtons(),
+                Positioned(
+                  top: zoom? 0: (height > 800 ? 90 : height * 0.17),
+                  bottom: zoom? 0: null,
+                  child: InkWell(onDoubleTap: _toggle,
+                    child: Container(
+                      height: zoom? 660: (height > 800 ? 700 : height * 0.72),
+                      width: zoom? 490: (width > 760 ? 400 : width * 0.8),
+                      child: PageView.builder(
+                        reverse: true,
+                        itemCount: rahmanPages.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                              color: Colors.white,
+                              child: Image.asset(rahmanPages[index],
+                                  fit: BoxFit.fill));
+                        },
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
