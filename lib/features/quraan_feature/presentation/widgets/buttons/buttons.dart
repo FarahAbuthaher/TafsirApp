@@ -53,7 +53,7 @@ class _AllTafsirButtonsState extends State<AllTafsirButtons> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: width > 760 ? 450 : width * 0.97,
+          width: width > 760 ? 400 : width * 0.94,
           height: height * 0.08,
           color: Colors.white,
           child: Stack(

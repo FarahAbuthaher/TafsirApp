@@ -23,7 +23,6 @@ class PlayAudio extends StatelessWidget {
           },)
     );
     return AlertDialog(
-
       buttonPadding: EdgeInsets.zero,
       title: Text(
         "!تنبيه",
