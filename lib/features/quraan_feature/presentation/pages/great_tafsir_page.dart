@@ -19,7 +19,7 @@ class _GreatTafsirPageState extends State<GreatTafsirPage> {
   bool zoom = false;
 
   _toggle() {
-    setState(()=> zoom=!zoom);
+    setState(() => zoom = !zoom);
   }
 
   @override
@@ -31,7 +31,8 @@ class _GreatTafsirPageState extends State<GreatTafsirPage> {
         child: Center(
           child: Container(
             width: width > 700 ? 700 : width,
-            child: /*zoom? InkWell(
+            child:
+                /*zoom? InkWell(
               onDoubleTap: _toggle,
               child: Stack(
                   alignment: Alignment.center,
@@ -54,7 +55,7 @@ class _GreatTafsirPageState extends State<GreatTafsirPage> {
                     ),]
               ),
             ):*/
-            Stack(
+                Stack(
               alignment: Alignment.center,
               children: [
                 Positioned.fill(
@@ -75,7 +76,6 @@ class _GreatTafsirPageState extends State<GreatTafsirPage> {
                     ),
                   ),
                 ),
-
                 Positioned(
                     top: 85,
                     right: width > 760 ? 200 : width * 0.17,
@@ -92,12 +92,13 @@ class _GreatTafsirPageState extends State<GreatTafsirPage> {
                     )),
                 AllTafsirButtons(),
                 Positioned(
-                  top: zoom? 0: (height > 800 ? 90 : height * 0.17),
-                  bottom: zoom? 0: null,
-                  child: InkWell(onDoubleTap: _toggle,
+                  top: zoom ? 0 : (height > 800 ? 90 : height * 0.17),
+                  bottom: zoom ? 0 : null,
+                  child: InkWell(
+                    onDoubleTap: _toggle,
                     child: Container(
-                      height: zoom? 660: (height > 800 ? 700 : height * 0.72),
-                      width: zoom? 490: (width > 760 ? 400 : width * 0.8),
+                      height: zoom ? 660 : (height > 800 ? 700 : height * 0.72),
+                      width: zoom ? 490 : (width > 760 ? 400 : width * 0.8),
                       child: PageView.builder(
                         reverse: true,
                         itemCount: rahmanPages.length,
