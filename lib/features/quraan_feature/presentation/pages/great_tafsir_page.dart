@@ -32,29 +32,6 @@ class _GreatTafsirPageState extends State<GreatTafsirPage> {
           child: Container(
             width: width > 700 ? 700 : width,
             child:
-                /*zoom? InkWell(
-              onDoubleTap: _toggle,
-              child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Positioned.fill(
-                      child: Container(
-                        height: height > 800 ? 700 : height * 0.72,
-                        width: width > 760 ? 400 : width * 0.8,
-                        child: PageView.builder(
-                          reverse: true,
-                          itemCount: rahmanPages.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                                color: Colors.white,
-                                child: Image.asset(rahmanPages[index],
-                                    fit: BoxFit.fill));
-                          },
-                        ),
-                      ),
-                    ),]
-              ),
-            ):*/
                 Stack(
               alignment: Alignment.center,
               children: [
