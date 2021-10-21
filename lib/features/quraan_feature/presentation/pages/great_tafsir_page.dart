@@ -75,7 +75,7 @@ class _GreatTafsirPageState extends State<GreatTafsirPage> {
                     onDoubleTap: _toggle,
                     child: Container(
                       height: zoom ? 660 : (height > 800 ? 700 : height * 0.72),
-                      width: zoom ? 490 : (width > 760 ? 400 : width * 0.8),
+                      width: width > 760 ? (zoom? 500: 400): (zoom? 400: width * 0.8),
                       child: PageView.builder(
                         reverse: true,
                         itemCount: rahmanPages.length,
